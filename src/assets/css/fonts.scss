@@ -1,0 +1,31 @@
+@charset 'utf-8';
+
+@font-face {
+	font-family: 'NanumGothic';
+	font-style: normal;
+	src: url(./assets/font/NanumGothic-Regular.eot);
+	src: url(./assets/font/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+		 url(./assets/font/NanumGothic-Regular.woff) format('woff'),
+		 url(./assets/font/NanumGothic-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'NanumBarunGothic';
+	font-style: normal;
+	src: url(./assets/font/NanumBarunGothic.eot);
+	src: url(./assets/font/NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
+		 url(./assets/font/NanumBarunGothic.woff) format('woff'),
+		 url(./assets/font/NanumBarunGothic.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'NanumGothicExtraBold';
+	font-style: normal;
+	src: url(./assets/font/NanumGothic-ExtraBold.eot);
+	src: url(./assets/font/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+		 url(./assets/font/NanumGothic-ExtraBold.woff) format('woff'),
+		 url(./assets/font/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+
+a { font-family:'NanumGothicExtraBold'; }
+span { font-family:'NanumGothicBarun'; }
