@@ -1,1 +1,37 @@
 @charset "utf-8";
+
+.navBar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 55px;
+  width: stretch; // -webkit-fill-available
+  background-color: rgba(42, 42, 42, 1);
+
+  nav {
+    position: relative;
+    left: 120px;
+    padding: 17px;
+    margin-right: 120px;
+    font-size: 0.75em;
+
+    li {
+      display: inline;
+      margin-right: 42px;
+
+      a {
+        text-align: center;
+        color: rgba(153, 153, 153, 1);
+      }
+    }
+  }
+}
+
+.logo {
+  position: absolute;
+  padding: 12px;
+}
+
+.login-user {
+  float: right;
+}

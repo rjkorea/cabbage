@@ -1,10 +1,14 @@
-<ng-container [ngClass]="header">
-  <nav>
+<div class="navBar">
+  <a routerLink="/"><img class="logo" src="/assets/images/logo.svg"></a>
+  <nav class="bold">
     <li><a routerLink="/">{{ menu.home }}</a></li>
     <li><a routerLink="/company">{{ menu.company }}</a></li>
     <li><a routerLink="/user">{{ menu.user }}</a></li>
     <li><a routerLink="/content">{{ menu.content }}</a></li>
     <li><a routerLink="/enterance">{{ menu.enterance }}</a></li>
     <li><a routerLink="/qna">{{ menu.qna }}</a></li>
+
+    <!-- TODO: Get login session info, and set them to below -->
+    <li><a class="login-user" routerLink="/loginUser">Test Han (test)</a></li>
   </nav>
-</ng-container>
+</div>

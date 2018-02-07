@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Menu } from '../../model/menu.interface';
+import { Menu } from '../../shared/model/menu.interface';
 
 @Component({
   selector: 'app-header',
