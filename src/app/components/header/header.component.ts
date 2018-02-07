@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
     this.menu = {
       home: 'HOME',
       company: 'COMPANY',
-      user: 'USER',
+      user: 'USER ▾',
       content: 'CONTENT',
       enterance: 'ENTERANCE',
       qna: 'Q&A'

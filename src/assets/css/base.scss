@@ -3,4 +3,16 @@
 li { list-style: none; }
 a { text-decoration: none; color: inherit; }
 
-.container { box-sizing: border-box; justify-content: center; align-items: center; padding: 0.5em; }
+.content {
+  position: absolute;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: stretch;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: -1;
+}

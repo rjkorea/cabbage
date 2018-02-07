@@ -4,15 +4,14 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 55px;
   width: stretch; // -webkit-fill-available
   background-color: rgba(42, 42, 42, 1);
 
   nav {
     position: relative;
-    left: 120px;
+    left: 140px;
     padding: 17px;
-    margin-right: 120px;
+    margin-right: 140px;
     font-size: 0.75em;
 
     li {
@@ -30,6 +29,7 @@
 .logo {
   position: absolute;
   padding: 12px;
+  margin-left: 15px;
 }
 
 .login-user {
