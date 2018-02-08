@@ -20,7 +20,7 @@
 
       a {
         text-align: center;
-        color: rgba(153, 153, 153, 1);
+        &:hover { color: rgb(255, 255, 255); }
       }
     }
   }
