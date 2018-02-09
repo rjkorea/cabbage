@@ -1,4 +1,4 @@
 @charset 'utf-8';
+@import 'mixin';
 
-.wrap-board { position: relative; }
-// .dashboard { @include setCenter; }
+.dashboard { @include setCenter; }
