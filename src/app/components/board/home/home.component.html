@@ -1,7 +1,48 @@
 <div class="dashboard">
-  This is the status field.
-
-  <div>
-    
+  <div class="row">
+    <div class="col-sm title">ULTRA KOREA 2018 (Ultra Korea)</div>
+  </div>
+  <div class="row">
+    <div class="col-sm c-bg festa"><img src="/assets/images/logo.svg"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm c-title" data="Visit rate"><span>방문율</span></div>
+    <div class="col-sm offset-md-1 c-title" data="Partner"><span>파트너</span></div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <div class="bold rate">87.5 %</div>
+    </div>
+    <div class="col-sm offset-md-1">
+      <div class="bold c-bg partner"><img src="/assets/images/download.jpeg"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm c-title" data="Overall group ticket status"><span>그룹 티켓</span></div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <div class="table-responsive">
+          <table class="table table-striped">
+            <tr>
+              <th>그룹이름</th>
+              <th>그룹설명</th>
+              <th>입장율</th>
+              <th>입장 / 등록 / 전체</th>
+            </tr>
+            <tr *ngFor="let g of left_groups">
+              <td>{{g.name}}</td>
+              <td>{{g.desc}}</td>
+              <td>
+                <strong *ngIf="g.reg_gt_cnt">{{((g.used_gt_cnt/g.reg_gt_cnt)*100).toString() | slice:0:4}}%</strong>
+                <strong *ngIf="!g.reg_gt_cnt">0%</strong>
+              </td>
+              <td>
+                <span class="badge">{{g.used_gt_cnt}} / {{g.reg_gt_cnt}} / {{g.qty}}</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </div>
   </div>
 </div>

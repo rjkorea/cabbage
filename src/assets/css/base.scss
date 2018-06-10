@@ -8,11 +8,11 @@ a { text-decoration: none; color: inherit; }
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  width: stretch;
-  left: 0px;
-  top: 0px;
-  bottom: 0px;
-  padding: 0.5em;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 7.5em 0.5em 0.5em 0.5em;
   background-color: rgba(0, 0, 0, 1);
   z-index: -1;
 }

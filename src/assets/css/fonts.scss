@@ -1,22 +1,37 @@
 @charset 'utf-8';
+@import 'variables';
 
 @font-face {
-	font-family: 'NotoSansCJKkrRegular';
+	font-family: 'NotoSansKRRegular';
 	font-style: normal;
-	src: url(./assets/font/NotoSansCJKkr-Regular.otf);
+	src: url(./assets/font/NotoSansKR-Regular.woff2);
 }
 
 @font-face {
-	font-family: 'NotoSansCJKkrBold';
+	font-family: 'NotoSansKRLight';
 	font-style: normal;
-	src: url(./assets/font/NotoSansCJKkr-Bold.otf);
+	src: url(./assets/font/NotoSansKR-Light.woff2);
+}
+
+@font-face {
+	font-family: 'NotoSansKRBold';
+	font-style: normal;
+	src: url(./assets/font/NotoSansKR-Bold.woff2);
 }
 
 body {
-	font-family: 'NotoSansCJKkrRegular';
-	color: rgb(153, 153, 153);
+	font-family: 'NotoSansKRRegular';
+	color: $lightGrey;
 
 	.bold {
-		font-family: 'NotoSansCJKkrBold';
+		font-family: 'NotoSansKRBold';
+	}
+
+	.light {
+		font-family: 'NotoSansKRLight';
+	}
+
+	.default {
+		font-family: 'NotoSansKRRegular';
 	}
 }

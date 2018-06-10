@@ -1,4 +1,93 @@
 @charset 'utf-8';
+@import 'variables';
 @import 'mixin';
 
-.dashboard { @include setCenter; }
+.dashboard {
+    width: 920px;
+    padding: 0 1em;
+    margin: auto;
+}
+
+.row {
+    margin: 16px 0;
+}
+
+.title {
+    border: 1px solid $boldGrey;
+    border-radius: 2px;
+    padding: 6px;
+}
+
+.c-title {
+    color: white;
+    font-size: 18px;
+
+    span {
+        margin-left: 16px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        width: 6px;
+        height: 18px;
+        background-color: white;
+    }
+
+    &::after {
+        content: attr(data);
+        font-family: 'NotoSansKRLight';
+        color: $lightGrey;
+        margin-left: 21px;
+    }
+}
+
+.c-bg {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    img {
+        display: block;
+        object-fit: contain;
+        margin: auto;
+    }
+}
+
+.festa {
+    width: 120px;
+    height: 120px;
+
+    img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.rate {
+    border: 1px solid $boldGrey;
+    border-radius: 2px;
+    font-size: 57px;
+    color: white;
+    padding: 16px 0;
+    text-align: center;
+
+}
+
+.partner {
+    height: 119px;
+    border: 1px solid $boldGrey;
+    border-radius: 2px;
+    padding: 16px;
+    text-align: center;
+
+    img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+.table th {
+    border-top: 1px solid $boldGrey;
+}
