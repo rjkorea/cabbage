@@ -7,16 +7,7 @@ import { Menu } from '../../shared/model/menu.interface';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private menu: Menu;
   constructor() {
-    this.menu = {
-      home: 'HOME',
-      company: 'COMPANY',
-      user: 'USER ▾',
-      content: 'CONTENT',
-      enterance: 'ENTERANCE',
-      qna: 'Q&A'
-    }
   }
 
   ngOnInit() {

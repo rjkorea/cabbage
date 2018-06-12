@@ -1,10 +1,7 @@
 @charset "utf-8";
+@import 'variables';
 
 .navBar {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: stretch; // -webkit-fill-available
   background-color: rgba(42, 42, 42, 1);
 
   nav {
@@ -29,12 +26,22 @@
       }
     }
   }
-}
 
-.logo {
-  position: absolute;
-  padding: 12px;
-  margin-left: 15px;
+  a {
+    margin-left: 15px;
+
+    .logo {
+      padding: 12px;
+    }
+  }
+
+  .title {
+    display: inline;
+    vertical-align: middle;
+    font-size: 22px;
+    margin-left: 20px;
+    color: $lightGrey;
+  }
 }
 
 .login-user {

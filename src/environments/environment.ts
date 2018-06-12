@@ -8,7 +8,8 @@ export const environment = {
   debug: false,
   api: {
     protocol: 'http',
-    host: 'localhost',
+    // host: 'localhost',
+    host: 'devapi.tkit.me',
     port: 9100
   }
 };

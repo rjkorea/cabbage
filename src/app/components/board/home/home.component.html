@@ -1,9 +1,15 @@
 <div class="dashboard">
   <div class="row">
-    <div class="col-sm title">ULTRA KOREA 2018 (Ultra Korea)</div>
+    <div class="col-sm title">
+      <select #festa (change)="changeContents()" required>
+        <ng-container *ngFor="let c of contents">
+          <option [value]="c._id">{{c.name}}&nbsp;&nbsp;&nbsp;({{c.company.name}})</option>
+        </ng-container>
+      </select>
+    </div>
   </div>
   <div class="row">
-    <div class="col-sm c-bg festa"><img src="/assets/images/logo.svg"></div>
+    <div class="col-sm c-bg festa"><img [src]="logoSrc"></div>
   </div>
   <div class="row">
     <div class="col-sm c-title" data="Visit rate"><span>방문율</span></div>
