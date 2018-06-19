@@ -19,4 +19,9 @@ export class ContentService {
     const url = `${this.contentsUrl}?q=${query}&start=${start}&size=${size}`;
     return this.http.get(url, this.options);
   }
+
+  public getGroupList(content_oid: string, query: string, start: Number, size: Number): Observable<{}> {
+    const url = `${URL}/a/content/${content_oid}/groups?q=${query}&start=${start}&size=${size}`;
+    return this.http.get(url, this.options);
+  }
 }

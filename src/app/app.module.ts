@@ -8,15 +8,13 @@ import { HomeComponent } from './components/board/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CompanyComponent } from './components/board/company/company.component';
 import { ContentService } from './services/content.service';
-import { ContentsDirective } from './directives/contents.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    CompanyComponent,
-    ContentsDirective
+    CompanyComponent
   ],
   imports: [
     BrowserModule,

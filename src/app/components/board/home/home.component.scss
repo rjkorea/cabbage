@@ -69,7 +69,7 @@
         content: attr(data);
         font-family: 'NotoSansKRLight';
         color: $lightGrey;
-        margin-left: 21px;
+        margin-left: 16px;
     }
 }
 
@@ -87,8 +87,10 @@
 
 .festa {
     width: 120px;
-    height: 120px;
-    margin-bottom: 3.5rem;
+    padding: 30px 0;
+    margin-bottom: 2.2rem;
+    background-color: white;
+    border-radius: 2px;
 
     img {
         height: 120px;
@@ -118,6 +120,10 @@
     }
 }
  
-.table th {
+.table td, .table th {
     border-top: 1px solid $boldGrey;
+}
+
+.table th {
+    color: white;
 }

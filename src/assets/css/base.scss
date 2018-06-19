@@ -1,19 +1,18 @@
 @charset 'utf-8';
+@import 'variables';
 
 li { list-style: none; }
 a { text-decoration: none; color: inherit; }
 select { -webkit-appearance: none; }
 
+html, body {
+  min-height: 100%;
+  background-color: $bg;
+}
+
 .content {
-  position: absolute;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  padding: 5.5em 0.5em 0.5em 0.5em;
-  background-color: rgba(0, 0, 0, 1);
+  height: 100%;
+  padding: 0.5em;
+  background-color: $bg;
   z-index: -1;
 }
