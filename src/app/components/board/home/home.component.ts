@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, OnChanges } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnChanges, AfterContentInit } from '@angular/core';
 import { ContentService } from '../../../services/content.service';
-import { resolve } from 'q';
+import { FunctionService } from '../../../services/function.service';
 
 @Component({
   selector: 'app-home',
@@ -18,13 +18,20 @@ export class HomeComponent implements OnInit {
   groupLength = 0;
   size = 10;
   page = 1;
+  count = 0;
 
   groupCount = 0;
   groupUsedCount = 0;
 
   constructor(
-    private contentService: ContentService
-  ) { }
+    private contentService: ContentService,
+    private functionService: FunctionService
+  ) {
+    this.functionService.subject.subscribe(res => {
+      this.loadGroups(res, '', this.page);
+      this.changeGroupPage();
+    })
+  }
 
   ngOnInit() {
     this.loadContents();
@@ -37,29 +44,19 @@ export class HomeComponent implements OnInit {
       this.logoSrc = this.contents[0]['image']['logo']['m'];
       // localStorage.setItem('contentName', `${this.contents[0]['name']} (${this.contents[0]['company']['name']})`);
 
-      this.loadGroups('', this.page);
+      this.functionService.setSubject(this.contentId);
     }, err => {
       console.log(err);
     });
   }
 
-  loadGroups(query: any, page: any): void {
-    this.contentService.getGroupList(this.contentId, query, (page - 1) * this.size, this.size).subscribe(res => {
-      const length = res['data'].length;
-
-      if (length <= 0) {
-        this.page = 1;
-        this.groupLength = 0;
-
-        clearInterval(this.timer);
-        this.loadGroups('', ++this.page);
-        this.changeGroupPage();
-      } else {
-        this.groups = res['data'];
-        this.groupLength = res['data'].length;
-        this.groupCount = res['group_ticket_count'];
-        this.groupUsedCount = res['group_ticket_used_count'];
-      }
+  loadGroups(id: any, query: any, page: any): void {
+    this.contentService.getGroupList(id, query, (page - 1) * this.size, this.size).subscribe(res => {
+      this.count = res['count'];
+      this.groups = res['data'];
+      this.groupLength = res['data'].length;
+      this.groupCount = res['group_ticket_count'];
+      this.groupUsedCount = res['group_ticket_used_count'];
     }, err => {
       console.log(err);
     });
@@ -77,12 +74,19 @@ export class HomeComponent implements OnInit {
       }
     }
 
-    this.loadGroups('', this.page);
+    this.loadGroups(this.contentId, '', this.page);
   }
 
   changeGroupPage(): void {
     this.timer = setInterval(() => {
-      this.loadGroups('', ++this.page);
-    }, 60000);
+      const limit = this.count / this.size;
+
+      if (this.page <= limit) {
+        this.loadGroups(this.contentId, '', this.page);
+        this.page++;
+      } else {
+        this.page = 1;
+      }
+    }, 20000);
   }
 }

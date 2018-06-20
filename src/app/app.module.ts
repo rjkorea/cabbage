@@ -8,6 +8,7 @@ import { HomeComponent } from './components/board/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CompanyComponent } from './components/board/company/company.component';
 import { ContentService } from './services/content.service';
+import { FunctionService } from './services/function.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContentService } from './services/content.service';
     HttpClientModule
   ],
   providers: [
-    ContentService
+    ContentService,
+    FunctionService
   ],
   bootstrap: [AppComponent]
 })
