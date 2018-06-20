@@ -9,7 +9,7 @@ const URL = `${environment.api.protocol}://${environment.api.host}:${environment
 export class ContentService {
   private headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'csk=' + localStorage.getItem('csk')});
   private contentsUrl = `${URL}/a/contents`;
-  private options = { headers: this.headers, withCredentials: true };;
+  private options = { headers: this.headers, withCredentials: true };
 
   constructor(
     private http: HttpClient

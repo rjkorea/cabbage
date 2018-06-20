@@ -10,7 +10,7 @@ import { resolve } from 'q';
 export class HomeComponent implements OnInit {
   @ViewChild('festa') festa: ElementRef;
 
-  id: string;
+  contentId: string;
   contents: Object;
   groups: Object;
   timer: any;
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   groupCount = 0;
   groupUsedCount = 0;
-  
+
   constructor(
     private contentService: ContentService
   ) { }
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   loadContents() {
     this.contentService.getContentList('', 0, 100).subscribe(res => {
       this.contents = res['data'];
-      this.id = res['data'][0]['_id'];
+      this.contentId = res['data'][0]['_id'];
       this.logoSrc = this.contents[0]['image']['logo']['m'];
       // localStorage.setItem('contentName', `${this.contents[0]['name']} (${this.contents[0]['company']['name']})`);
 
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadGroups(query: any, page: any): void {
-    this.contentService.getGroupList(this.id, query, (page - 1) * this.size, this.size).subscribe(res => {
+    this.contentService.getGroupList(this.contentId, query, (page - 1) * this.size, this.size).subscribe(res => {
       const length = res['data'].length;
 
       if (length <= 0) {
@@ -70,13 +70,13 @@ export class HomeComponent implements OnInit {
 
     this.page = 1;
 
-    for (let i in this.contents) {
+    for (const i in this.contents) {
       if (this.contents[i]['_id'] === cVal) {
-        this.id = this.contents[i]['_id'];
+        this.contentId = this.contents[i]['_id'];
         this.logoSrc = this.contents[i]['image']['logo']['m'];
       }
     }
-    
+
     this.loadGroups('', this.page);
   }
 
